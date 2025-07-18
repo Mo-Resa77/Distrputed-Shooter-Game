@@ -119,3 +119,107 @@ Encryptor: Handles AES encryption and decryption of action messages.
 MoResa_Shooter_Game: Main class for initializing and running the game nodes.
 
 The system uses a leader-based approach where the host node (ID 0) initializes the game state and processes actions. Non-host nodes forward actions to the leader, which multicasts them to all nodes for consistency.
+
+Interact with the Game:
+
+
+
+
+
+After starting a node, it will display its status and available commands.
+
+
+
+Enter commands in the format: <command> <target>
+
+
+
+
+
+shoot <player>: Shoot at another player (e.g., shoot B).
+
+
+
+heal <player>: Heal another player (e.g., heal C).
+
+
+
+move <direction>: Move in a direction (e.g., move up).
+
+
+
+quit: Exit the game.
+
+
+
+Game Output:
+
+
+
+
+
+The host node displays the game grid and player positions.
+
+
+
+All nodes show action processing details and game state updates.
+
+Game Rules
+
+
+
+
+
+Grid: Players operate on a 10x10 grid.
+
+
+
+Actions:
+
+
+
+
+
+Shoot: Deals 10 damage to the target if within 3 units. Eliminates players when health reaches 0.
+
+
+
+Heal: Restores 10 health to the target if within 3 units (max health is 100).
+
+
+
+Move: Moves the player one unit in the specified direction (up, down, left, right) if within grid bounds.
+
+
+
+Game Over: The game ends when only one player remains.
+
+
+
+Leader Election: If the host node fails, surviving nodes elect a new leader based on the highest node ID.
+
+Contributing
+
+Contributions are welcome! Please follow these steps:
+
+
+
+
+
+Fork the repository.
+
+
+
+Create a new branch (git checkout -b feature/your-feature).
+
+
+
+Make your changes and commit (git commit -m "Add your feature").
+
+
+
+Push to the branch (git push origin feature/your-feature).
+
+
+
+Open a pull request with a detailed description of your changes.
